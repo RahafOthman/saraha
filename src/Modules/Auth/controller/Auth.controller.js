@@ -15,7 +15,7 @@ export const signup = async(req, res)=>{
         const hashPassword = hash(password); 
         
         const token = createToken({email}, process.env.EMAIL_TOKEN);
-        const link = `http://localhost:3000/auth/confirmEmail/${token}`;
+        const link = `https://agreeable-lingerie-hare.cyclic.app/auth/confirmEmail/${token}`;
         sendEmail(email, 'Confirm Email', `<a href=${link}>Verfiy your email </a>`);
 
         const createuser = await userModel.create({userName, email, password:hashPassword});
