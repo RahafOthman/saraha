@@ -11,7 +11,7 @@ const initApp = (app, port, express)=>{
     })
   
     app.use(express.json());
-    app.use('/',(req, res)=>{
+    app.get('/',(req, res)=>{
         return res.json({message: "Welcome !"})
     })
     app.use("/auth", AuthRouter);
